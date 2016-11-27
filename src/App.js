@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+
+import Counter from './Counter';
+import Panel from './Panel';
 import TitleBanner from './TitleBanner';
 
 import './App.css';
-import logo from './logo.svg';
 
 class App extends Component {
   render() {
-    var subGreeting = "Let's get to <3 <em>it</em> :;"
     return (
       <div className="App">
-        <TitleBanner text="Welcome to React" color="red" />
-        <TitleBanner text={subGreeting} color="green" />
+      	<Panel title="A Panel">
+        	<TitleBanner text="I'm a Banner" />
+        	<Counter />
+        </Panel>
       </div>
     );
   }

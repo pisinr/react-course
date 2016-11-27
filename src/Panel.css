@@ -1,0 +1,17 @@
+.Panel {
+	margin: 20px;
+
+	border-radius: 3px;
+	border: 2px solid gray;
+}
+
+.Panel__header {
+	padding: 10px;
+	background: lightgray;
+	font-weight: bold;
+	text-align: center;
+}
+
+.Panel__body {
+	padding: 10px;
+}
