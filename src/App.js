@@ -1,34 +1,63 @@
 import React, { Component } from 'react';
+import _ from 'lodash'
 
-import Clock from './Clock';
 import Panel from './Panel';
-import TitleBanner from './TitleBanner';
+import TodoItem from './TodoItem';
 
+import './css/font-awesome.css';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      showSecondClock: false,
-      moreClocks: 0
+      todos: []
     }
-    this.handleShowSecondClock = this.handleShowSecondClock.bind(this)
+    this.addTodoItem = this.addTodoItem.bind(this)
+    this.markTodoCompleted = this.markTodoCompleted.bind(this)
   }
 
-  handleShowSecondClock() {
+  addTodoItem() {
+    var text = _.trim(this.input.value)
+    if (!text) { return; }
+    var new_todos = _.concat(this.state.todos, {
+      id: _.uniqueId(),
+      text: text,
+      completed: false
+    })
     this.setState({
-      showSecondClock: true
+      todos: new_todos
+    })
+  }
+
+  markTodoCompleted(todo) {
+    var new_todos = _.map(this.state.todos, function(td){
+      if (td.id == todo.id) {
+        console.log('in todo', todo)
+        return {
+          ...td,
+          completed: true
+        }
+      }
+      return td
+    })
+    this.setState({
+      todos: new_todos
     })
   }
 
   render() {
+    var self = this;
     return (
       <div className="App">
       	<Panel title="A Panel">
-          <button onClick={this.handleShowSecondClock}>Add more clock</button>
-          <Clock />
-          {this.state.showSecondClock && <Clock />}
+          <input ref={(el)=>{this.input = el}} type="text" />
+          <button onClick={this.addTodoItem}>Add TODO</button>
+          <ol>
+          {_.map(this.state.todos, (todo) => {
+            return <TodoItem key={todo.id} todo={todo} onIconClick={self.markTodoCompleted}/>
+          })}
+          </ol>
         </Panel>
       </div>
     );

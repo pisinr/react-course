@@ -1,0 +1,15 @@
+.TodoItem {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+.TodoItem--completed {
+	color: darkgray;
+}
+
+.TodoItem__icon {
+	cursor: pointer;
+	margin-right: 1em;
+}
