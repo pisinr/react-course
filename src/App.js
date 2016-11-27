@@ -20,29 +20,20 @@ class App extends Component {
   addTodoItem() {
     var text = _.trim(this.input.value)
     if (!text) { return; }
-    var new_todos = _.concat(this.state.todos, {
+    this.state.todos.push({
       id: _.uniqueId(),
       text: text,
       completed: false
     })
     this.setState({
-      todos: new_todos
+      todos: this.state.todos
     })
   }
 
   markTodoCompleted(todo) {
-    var new_todos = _.map(this.state.todos, function(td){
-      if (td.id == todo.id) {
-        console.log('in todo', todo)
-        return {
-          ...td,
-          completed: true
-        }
-      }
-      return td
-    })
+    todo.completed = true
     this.setState({
-      todos: new_todos
+      todos: this.state.todos
     })
   }
 
