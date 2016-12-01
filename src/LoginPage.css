@@ -1,0 +1,8 @@
+.LoginPage__Panel {
+	width: 30em;
+	margin: 10em auto;
+}
+
+.LoginPage__Panel .Panel__body {
+	padding: 20px;
+}

@@ -14,4 +14,13 @@
 
 .Panel__body {
 	padding: 10px;
+	clear: both;
+}
+
+.Panel__body:after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }

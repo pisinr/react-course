@@ -2,4 +2,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-family: Verdana, sans-serif;
+}
+
+.form-control {
+	margin-bottom: 10px;
+}
+
+.form-control input[type=text],
+.form-control input[type=password] {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid gray;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 0.5em
+}
+
+.form-control input[type=text]:active,
+.form-control input[type=text]:focus,
+.form-control input[type=password]:active,
+.form-control input[type=password]:focus {
+	border-bottom: 1px solid lightblue;
 }
