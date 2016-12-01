@@ -1,0 +1,9 @@
+.ItemLayout__SideNav {
+	float: left;
+	width: 30%;
+}
+
+.ItemLayout__Main {
+	float: left;
+	width: 70%;
+}

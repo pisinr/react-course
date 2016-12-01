@@ -1,8 +1,7 @@
 .Panel {
-	margin: 20px;
-
 	border-radius: 3px;
 	border: 2px solid gray;
+	box-sizing: border-box;
 }
 
 .Panel__header {
@@ -15,6 +14,7 @@
 .Panel__body {
 	padding: 10px;
 	clear: both;
+	box-sizing: border-box;
 }
 
 .Panel__body:after {

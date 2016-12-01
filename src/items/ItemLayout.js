@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router'
 
-import Panel from './components/Panel'
+import Panel from '../components/Panel'
 
-import './FullLayout.css'
+import './ItemLayout.css'
 
-export default class FullLayout extends Component {
+export default class ItemLayout extends Component {
 	render() {
 		return (
 			<Panel title="React Complex Layout">
-				<Panel className="FullLayout__SideNav" title="sidenav">
+				<Panel className="ItemLayout__SideNav" title="sidenav">
 					{this.props.sidebar}
 				</Panel>
-				<Panel className="FullLayout__Main" title="main">
+				<Panel className="ItemLayout__Main" title="main">
 					{this.props.main}
 				</Panel>
 			</Panel>

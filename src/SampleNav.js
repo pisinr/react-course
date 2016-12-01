@@ -10,10 +10,6 @@ class SampleNav extends Component {
 			<div className={classnames("SampleNav", this.props.className)}>
 				<Link to={{pathname: "/"}}>Root</Link>
 				<Link to={{pathname: "/login"}}>Login</Link>
-				<Link to={{pathname: "/delay"}}>Waiting Page</Link>
-				<Link to={{pathname: "/deny"}}>Secret Page</Link>
-				<Link to={{pathname: "/abc"}}>Notfound1</Link>
-				<Link to={{pathname: "/def"}}>Notfound2</Link>
 				<Link to={{pathname: "/items"}}>Item Index</Link>
 				<Link to={{pathname: "/items/1"}}>Item 1</Link>
 				<Link to={{pathname: "/items/2"}}>Item 2</Link>
